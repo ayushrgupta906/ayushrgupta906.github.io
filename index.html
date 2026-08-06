@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- SWAP: title, description, and og tags -->
+<title>Ayush Gupta</title>
+<meta name="description" content="Personal site of Ayush Gupta — writing, work, and a short account of what I care about." />
+<meta property="og:title" content="Ayush Gupta" />
+<meta property="og:description" content="Writing, work, and a short account of what I care about." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=Inter:wght@300..600&display=swap" rel="stylesheet" />
+
+<!-- Compiled Tailwind. Theme lives in tailwind.config.js; rebuild with `npm run build`. -->
+<link rel="stylesheet" href="styles.css" />
+
+<script>document.documentElement.classList.add('js');</script>
+
+<style>
+  section[id] { scroll-margin-top: 6rem; }
+  .balance { text-wrap: balance; }
+
+  /* Reveal on scroll — only hides content when JS is actually running.
+     Without the .js class (script blocked, static snapshot, JS off) everything
+     renders normally instead of a blank page. */
+  .js [data-reveal] {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity .7s cubic-bezier(.2,.6,.2,1), transform .7s cubic-bezier(.2,.6,.2,1);
+  }
+  .js [data-reveal].is-visible { opacity: 1; transform: none; }
+
+  /* Nav active state */
+  .nav-link { position: relative; }
+  .nav-link::after {
+    content: ''; position: absolute; left: 0; right: 0; bottom: -4px;
+    height: 1px; background: currentColor;
+    transform: scaleX(0); transform-origin: left;
+    transition: transform .3s cubic-bezier(.2,.6,.2,1);
+  }
+  .nav-link:hover::after, .nav-link[aria-current="true"]::after { transform: scaleX(1); }
+  .nav-link[aria-current="true"] { color: #C2603F; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .js [data-reveal] { opacity: 1; transform: none; transition: none; }
+    .nav-link::after { transition: none; }
+  }
+</style>
+</head>
+
+<body class="bg-paper font-sans text-[17px] leading-relaxed text-ink antialiased selection:bg-accent/15">
+
+<a href="#about" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-ink focus:px-4 focus:py-2 focus:text-sm focus:text-paper">Skip to content</a>
+
+<!-- ══ NAV ══ -->
+<header id="nav" class="fixed inset-x-0 top-0 z-40 transition-colors duration-300">
+  <nav class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4 sm:px-8" aria-label="Primary">
+    <!-- SWAP: your name -->
+    <a href="#about" class="hidden font-serif text-lg tracking-tight transition-colors hover:text-accent sm:block">Ayush&nbsp;Gupta</a>
+
+    <ul class="flex w-full items-center justify-between gap-4 text-[13px] tracking-wide text-muted sm:w-auto sm:justify-end sm:gap-7">
+      <li><a class="nav-link transition-colors hover:text-ink" href="#about">About</a></li>
+      <li><a class="nav-link transition-colors hover:text-ink" href="#writing">Writing</a></li>
+      <li class="hidden sm:block"><a class="nav-link text-accent transition-opacity hover:opacity-70" href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <div id="nav-rule" class="h-px w-full bg-rule opacity-0 transition-opacity duration-300"></div>
+</header>
+
+<main>
+  <!-- ══ ABOUT / HERO ══ -->
+  <section id="about" class="mx-auto max-w-5xl px-6 pb-14 pt-36 sm:px-8 sm:pb-16 sm:pt-48">
+    <div class="grid gap-14 md:grid-cols-[1fr_auto] md:items-start md:gap-16">
+      <div data-reveal>
+        <!-- SWAP: name -->
+        <h1 class="balance font-serif text-[clamp(2.6rem,7vw,4.5rem)] font-normal leading-[1.05] tracking-[-0.02em]">
+          Ayush Gupta
+        </h1>
+
+        <!-- SWAP: path line -->
+        <p class="mt-5 flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[13px] tracking-widest text-faint uppercase">
+          <span>San Francisco</span>
+          <span class="text-accent" aria-hidden="true">→</span>
+          <span>Andover</span>
+          <span class="text-accent" aria-hidden="true">→</span>
+          <span>Carnegie Mellon</span>
+        </p>
+
+        <div class="mt-8 max-w-measure space-y-5 text-muted">
+          <p>
+            I'm curious by nature and have a love for lifelong learning. Academically, that
+            translates to an interest in climate tech/policy, financial cycles/crises, and
+            history of capital markets.
+          </p>
+          <p>
+            Outside the classroom, I have an avid interest in the outdoors, especially paddling
+            and mountaineering. Next on my journey, I head to Carnegie Mellon where I plan to
+            major in Behavioral Economics, double click on current interests and discover new
+            ones.
+          </p>
+        </div>
+
+        <!-- SWAP: links -->
+        <div class="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 text-[15px]">
+          <a href="mailto:ayushrgupta906@gmail.com" class="group inline-flex items-center gap-1.5 border-b border-ink/20 pb-0.5 transition-colors hover:border-accent hover:text-accent">
+            Email
+            <span class="transition-transform group-hover:translate-x-0.5">↗</span>
+          </a>
+          <a href="https://www.linkedin.com/in/ayush-gupta-844305300/" target="_blank" rel="noopener" class="text-muted transition-colors hover:text-accent">LinkedIn</a>
+        </div>
+      </div>
+
+      <figure data-reveal class="order-first md:order-none">
+        <img src="portrait.jpg" alt="Portrait of Ayush Gupta"
+             class="h-72 w-56 rounded-sm object-cover sm:h-[26rem] sm:w-80" />
+      </figure>
+    </div>
+  </section>
+
+  <!-- ══ WRITING ══ -->
+  <section id="writing" class="border-t border-rule bg-raised/60">
+    <div class="mx-auto max-w-5xl px-6 pb-14 pt-20 sm:px-8 sm:pb-16 sm:pt-28">
+      <header data-reveal class="mb-12">
+        <h2 class="font-serif text-3xl tracking-tight sm:text-4xl">Writing</h2>
+      </header>
+
+      <!-- Each <li> is one piece. The PDFs live in writing/ and open in the
+           preview overlay — data-preview is what routes a link there. To update a
+           piece, re-export the doc over the same filename in writing/. -->
+      <div class="space-y-14">
+        <div data-reveal>
+          <h3 class="mb-4 text-[13px] tracking-widest text-faint uppercase">Economic writing</h3>
+          <ul class="-mt-1">
+          <li data-reveal class="border-b border-rule">
+            <a href="writing/policy-brief.pdf" data-preview data-title="A U.S. Strategic Investment Fund"
+               class="group flex items-baseline justify-between gap-6 py-5">
+              <span class="min-w-0">
+                <span class="block font-serif text-xl leading-snug transition-colors group-hover:text-accent">A U.S. Strategic Investment Fund</span>
+                <span class="mt-1 block text-[13px] tracking-wide text-faint">Policy brief · 7 pages</span>
+              </span>
+              <span class="shrink-0 self-center text-faint transition-all group-hover:translate-x-1 group-hover:text-accent">&#8594;</span>
+            </a>
+          </li>
+
+          <li data-reveal class="border-b border-rule">
+            <a href="writing/op-ed.pdf" data-preview data-title="Beyond the Bubble: The Mental Health Tech Mania"
+               class="group flex items-baseline justify-between gap-6 py-5">
+              <span class="min-w-0">
+                <span class="block font-serif text-xl leading-snug transition-colors group-hover:text-accent">Beyond the Bubble: The Mental Health Tech Mania</span>
+                <span class="mt-1 block text-[13px] tracking-wide text-faint">Op-ed · 4 pages</span>
+              </span>
+              <span class="shrink-0 self-center text-faint transition-all group-hover:translate-x-1 group-hover:text-accent">&#8594;</span>
+            </a>
+          </li>
+
+          <li data-reveal class="border-b border-rule">
+            <a href="writing/mock-interview.pdf" data-preview data-title="Karl Marx on Panics, Credit, and Crisis"
+               class="group flex items-baseline justify-between gap-6 py-5">
+              <span class="min-w-0">
+                <span class="block font-serif text-xl leading-snug transition-colors group-hover:text-accent">Karl Marx on Panics, Credit, and Crisis</span>
+                <span class="mt-1 block text-[13px] tracking-wide text-faint">Mock interview · 5 pages</span>
+              </span>
+              <span class="shrink-0 self-center text-faint transition-all group-hover:translate-x-1 group-hover:text-accent">&#8594;</span>
+            </a>
+          </li>
+
+          <li data-reveal class="border-b border-rule">
+            <a href="writing/creative-piece.pdf" data-preview data-title="Yertle the Turtle and the Panic of 1907"
+               class="group flex items-baseline justify-between gap-6 py-5">
+              <span class="min-w-0">
+                <span class="block font-serif text-xl leading-snug transition-colors group-hover:text-accent">Yertle the Turtle and the Panic of 1907</span>
+                <span class="mt-1 block text-[13px] tracking-wide text-faint">Creative piece · 3 pages</span>
+              </span>
+              <span class="shrink-0 self-center text-faint transition-all group-hover:translate-x-1 group-hover:text-accent">&#8594;</span>
+            </a>
+          </li>
+
+          <li data-reveal class="border-b border-rule">
+            <a href="writing/history-paper.pdf" data-preview data-title="Sweet Lies: How Cereal Marketing Reshaped Childhood and Consumer Habits in America"
+               class="group flex items-baseline justify-between gap-6 py-5">
+              <span class="min-w-0">
+                <span class="block font-serif text-xl leading-snug transition-colors group-hover:text-accent">Sweet Lies: How Cereal Marketing Reshaped Childhood and Consumer Habits in America</span>
+                <span class="mt-1 block text-[13px] tracking-wide text-faint">History paper · 14 pages</span>
+              </span>
+              <span class="shrink-0 self-center text-faint transition-all group-hover:translate-x-1 group-hover:text-accent">&#8594;</span>
+            </a>
+          </li>
+          </ul>
+        </div>
+
+        <div data-reveal>
+          <h3 class="mb-4 text-[13px] tracking-widest text-faint uppercase">Environmental projects</h3>
+          <ul class="-mt-1">
+          <li data-reveal class="border-b border-rule">
+            <a href="writing/cochran-sanctuary.pdf" data-preview data-title="Cochran Wildlife Sanctuary Value Assessment"
+               class="group flex items-baseline justify-between gap-6 py-5">
+              <span class="min-w-0">
+                <span class="block font-serif text-xl leading-snug transition-colors group-hover:text-accent">Cochran Wildlife Sanctuary Value Assessment</span>
+                <span class="mt-1 block text-[13px] tracking-wide text-faint">Value assessment · 14 pages</span>
+              </span>
+              <span class="shrink-0 self-center text-faint transition-all group-hover:translate-x-1 group-hover:text-accent">&#8594;</span>
+            </a>
+          </li>
+
+          <li data-reveal class="border-b border-rule">
+            <a href="writing/gwynns-falls.pdf" data-preview data-title="Gwynns Falls Watershed Assessment"
+               class="group flex items-baseline justify-between gap-6 py-5">
+              <span class="min-w-0">
+                <span class="block font-serif text-xl leading-snug transition-colors group-hover:text-accent">Gwynns Falls Watershed Assessment</span>
+                <span class="mt-1 block text-[13px] tracking-wide text-faint">Watershed assessment · 13 pages</span>
+              </span>
+              <span class="shrink-0 self-center text-faint transition-all group-hover:translate-x-1 group-hover:text-accent">&#8594;</span>
+            </a>
+          </li>
+
+          <li data-reveal class="border-b border-rule">
+            <a href="writing/rogers-brook.pdf" data-preview data-title="Rogers Brook Proposal"
+               class="group flex items-baseline justify-between gap-6 py-5">
+              <span class="min-w-0">
+                <span class="block font-serif text-xl leading-snug transition-colors group-hover:text-accent">Rogers Brook Proposal</span>
+                <span class="mt-1 block text-[13px] tracking-wide text-faint">Proposal · 12 pages</span>
+              </span>
+              <span class="shrink-0 self-center text-faint transition-all group-hover:translate-x-1 group-hover:text-accent">&#8594;</span>
+            </a>
+          </li>
+
+          <li data-reveal class="border-b border-rule">
+            <a href="writing/topsoil.pdf" data-preview data-title="Topsoil Degradation"
+               class="group flex items-baseline justify-between gap-6 py-5">
+              <span class="min-w-0">
+                <span class="block font-serif text-xl leading-snug transition-colors group-hover:text-accent">Topsoil Degradation</span>
+                <span class="mt-1 block text-[13px] tracking-wide text-faint">Presentation · 9 pages</span>
+              </span>
+              <span class="shrink-0 self-center text-faint transition-all group-hover:translate-x-1 group-hover:text-accent">&#8594;</span>
+            </a>
+          </li>
+          </ul>
+        </div>
+
+        <div data-reveal>
+          <h3 class="mb-4 text-[13px] tracking-widest text-faint uppercase">Creative writing</h3>
+          <ul class="-mt-1">
+          <li data-reveal class="border-b border-rule">
+            <a href="writing/sonder.pdf" data-preview data-title="Sonder"
+               class="group flex items-baseline justify-between gap-6 py-5">
+              <span class="min-w-0">
+                <span class="block font-serif text-xl leading-snug transition-colors group-hover:text-accent">Sonder</span>
+                <span class="mt-1 block text-[13px] tracking-wide text-faint">Short story · 13 pages</span>
+              </span>
+              <span class="shrink-0 self-center text-faint transition-all group-hover:translate-x-1 group-hover:text-accent">&#8594;</span>
+            </a>
+          </li>
+
+
+          <li data-reveal class="border-b border-rule">
+            <a href="writing/bond-hot-dog.pdf" data-preview data-title="Bond the Hot Dog"
+               class="group flex items-baseline justify-between gap-6 py-5">
+              <span class="min-w-0">
+                <span class="block font-serif text-xl leading-snug transition-colors group-hover:text-accent">Bond the Hot Dog</span>
+                <span class="mt-1 block text-[13px] tracking-wide text-faint">Creative story · 3 pages</span>
+              </span>
+              <span class="shrink-0 self-center text-faint transition-all group-hover:translate-x-1 group-hover:text-accent">&#8594;</span>
+            </a>
+          </li>
+
+          <li data-reveal class="border-b border-rule">
+            <a href="writing/kevin-olusola.pdf" data-preview data-title="Kevin Olusola Performance"
+               class="group flex items-baseline justify-between gap-6 py-5">
+              <span class="min-w-0">
+                <span class="block font-serif text-xl leading-snug transition-colors group-hover:text-accent">Kevin Olusola Performance</span>
+                <span class="mt-1 block text-[13px] tracking-wide text-faint">Event report · 4 pages</span>
+              </span>
+              <span class="shrink-0 self-center text-faint transition-all group-hover:translate-x-1 group-hover:text-accent">&#8594;</span>
+            </a>
+          </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CONTACT ══ -->
+  <section id="contact" class="border-t border-rule bg-raised/60">
+    <div class="mx-auto max-w-5xl px-6 py-14 sm:px-8 sm:py-16">
+      <div data-reveal class="max-w-measure">
+        <h2 class="mb-6 font-serif text-2xl tracking-tight">Contact me</h2>
+
+        <!-- SWAP: email -->
+        <a href="mailto:ayushrgupta906@gmail.com"
+           class="group inline-flex items-baseline gap-2 text-[15px] text-ink transition-colors hover:text-accent">
+          <span class="border-b border-accent/40 pb-0.5 transition-colors group-hover:border-accent">ayushrgupta906@gmail.com</span>
+          <span class="text-accent transition-transform group-hover:translate-x-0.5">↗</span>
+        </a>
+
+        <div class="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-[15px] text-muted">
+          <a href="https://www.linkedin.com/in/ayush-gupta-844305300/" target="_blank" rel="noopener" class="transition-colors hover:text-accent">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ══ DOCUMENT PREVIEW ══ -->
+<div id="viewer" class="fixed inset-0 z-50 hidden items-center justify-center bg-ink/60 p-3 backdrop-blur-sm sm:p-8"
+     role="dialog" aria-modal="true" aria-labelledby="viewer-title">
+  <div class="flex h-full w-full max-w-4xl flex-col overflow-hidden rounded-md border border-rule bg-paper shadow-2xl">
+    <div class="flex shrink-0 items-center justify-between gap-4 border-b border-rule px-5 py-3">
+      <h3 id="viewer-title" class="truncate font-serif text-lg"></h3>
+      <div class="flex shrink-0 items-center gap-5 text-[13px]">
+        <a id="viewer-open" href="#" target="_blank" rel="noopener"
+           class="tracking-wide text-muted transition-colors hover:text-accent">Open ↗</a>
+        <button id="viewer-close" type="button" aria-label="Close preview"
+                class="text-lg leading-none text-faint transition-colors hover:text-accent">✕</button>
+      </div>
+    </div>
+    <iframe id="viewer-frame" title="Document preview" class="min-h-0 w-full flex-1 bg-raised"></iframe>
+  </div>
+</div>
+
+<footer class="border-t border-rule">
+  <div class="mx-auto flex max-w-5xl flex-col gap-2 px-6 py-8 text-[13px] tracking-wide text-faint sm:flex-row sm:items-center sm:justify-between sm:px-8">
+    <p>© <span id="year">2026</span> Ayush Gupta</p>
+  </div>
+</footer>
+
+<script>
+  // Footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Nav: solid background + hairline once scrolled
+  const nav = document.getElementById('nav');
+  const navRule = document.getElementById('nav-rule');
+  const onScroll = () => {
+    const scrolled = window.scrollY > 24;
+    nav.classList.toggle('bg-paper/85', scrolled);
+    nav.classList.toggle('backdrop-blur-md', scrolled);
+    navRule.classList.toggle('opacity-0', !scrolled);
+  };
+  onScroll();
+  addEventListener('scroll', onScroll, { passive: true });
+
+  // Reveal on scroll
+  const revealObserver = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      }
+    }
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+
+  document.querySelectorAll('[data-reveal]').forEach((el, i) => {
+    el.style.transitionDelay = `${Math.min(i, 4) * 60}ms`;
+    revealObserver.observe(el);
+  });
+
+  // Active section in nav
+  const links = [...document.querySelectorAll('.nav-link')];
+  const byId = new Map(links.map((l) => [l.hash.slice(1), l]));
+  const sectionObserver = new IntersectionObserver((entries) => {
+    const visible = entries.filter((e) => e.isIntersecting)
+                           .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    if (!visible) return;
+    links.forEach((l) => l.removeAttribute('aria-current'));
+    byId.get(visible.target.id)?.setAttribute('aria-current', 'true');
+  }, { rootMargin: '-25% 0px -55% 0px', threshold: [0.05, 0.25, 0.5] });
+
+  document.querySelectorAll('main section[id]').forEach((s) => sectionObserver.observe(s));
+
+  // Document preview overlay
+  const viewer = document.getElementById('viewer');
+  const frame = document.getElementById('viewer-frame');
+  const vTitle = document.getElementById('viewer-title');
+  const vOpen = document.getElementById('viewer-open');
+  let lastFocus = null;
+
+  const openViewer = (href, title) => {
+    lastFocus = document.activeElement;
+    vTitle.textContent = title;
+    vOpen.href = href;
+    frame.src = href.endsWith('.pdf') ? href + '#view=FitH' : href;
+    viewer.classList.remove('hidden');
+    viewer.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+    document.getElementById('viewer-close').focus();
+  };
+
+  const closeViewer = () => {
+    viewer.classList.add('hidden');
+    viewer.classList.remove('flex');
+    frame.src = 'about:blank';
+    document.body.style.overflow = '';
+    lastFocus?.focus();
+  };
+
+  document.querySelectorAll('a[data-preview]').forEach((a) => {
+    a.addEventListener('click', (e) => {
+      // let modified clicks open a real tab
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+      e.preventDefault();
+      openViewer(a.getAttribute('href'), a.dataset.title || '');
+    });
+  });
+
+  document.getElementById('viewer-close').addEventListener('click', closeViewer);
+  viewer.addEventListener('click', (e) => { if (e.target === viewer) closeViewer(); });
+  addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !viewer.classList.contains('hidden')) closeViewer();
+  });
+</script>
+</body>
+</html>
